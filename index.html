@@ -13,28 +13,55 @@
     }
 
     /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background: linear-gradient(to right, #183bf0 0%, #0a2299 100%);
-    }
+  
     
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
-  .carousel-inner img {
+  
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      font-size: 1.5em;
+      background: linear-gradient(to right, #881c1c 30%, #ffffff 100%);
+      border-color: #000000;
+    }
+
+    .navbar-inverse .navbar-nav > li > a{
+      color: #ffffff;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:after {
+      content: ''; 
+      height: 1px;
+      display: block;
+      border-bottom: 1px solid #ffffff;
+      width: 0;
+      -webkit-transition: width 0.2s;
+      transition: width 0.2s;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+      text-decoration: none;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover:after {
+      width: 100%;
+    }
+
+    .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
-  }
+    }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
     }
   }
   </style>
@@ -53,13 +80,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-       <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li
+      </ul> -->
     </div>
   </div>
 </nav>
@@ -129,6 +156,7 @@
       </div>
     </div>
   </div>
+  <hr>
 </div><br>
 
 <footer class="container-fluid text-center">
