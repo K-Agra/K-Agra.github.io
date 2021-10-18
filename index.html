@@ -20,13 +20,24 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+
+    .btn{
+      padding: 0;
+      font-size: 1em;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
       font-size: 1.5em;
-      background: linear-gradient(to right, #881c1c 30%, #ffffff 100%);
+      background: linear-gradient(to right, #881c1c 60%, #ffffff 100%);
       border-color: #000000;
+    }
+
+    .navbar-default .navbar-nav>li{
+      margin: auto;
     }
 
     .navbar-default .navbar-nav>li>a{
@@ -118,9 +129,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="btn navbar-btn btn-default">Request an appointment</button>
       <!-- <ul class="nav navbar-nav navbar-right">
        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li
       </ul> -->
@@ -173,7 +185,7 @@
     </a>
 </div>
   
-<div class="container text-center">    
+<div class="container text-center" id="about">    
   <h3>What We Do</h3><br>
   <div class="row">
     <div class="col-sm-4">
@@ -196,7 +208,7 @@
   <hr>
 </div><br>
 
-<footer class="container-fluid text-center">
+<footer id="contact" class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 
