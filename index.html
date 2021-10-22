@@ -11,9 +11,6 @@
     body{
       font-family: "Times New Roman", Times, serif;
     }
-
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-  
     
     /* Add a gray background color and some padding to the footer */
     footer {
@@ -34,6 +31,11 @@
       font-size: 1.5em;
       background: linear-gradient(to right, #881c1c 60%, #ffffff 100%);
       border-color: #000000;
+    }
+
+    .navbar-default .btn-default:hover {
+      background-color: #8A8B8C;
+      color: white;
     }
 
     .navbar-default .navbar-nav>li{
@@ -69,6 +71,24 @@
 
     .navbar-default .navbar-nav > li > a:hover:after {
       width: 100%;
+    }
+
+    .nav-pills>li>a{
+      color: black;
+    }
+
+    .nav-pills>li>a:hover{
+      background-color: #8A8B8C;
+      color: white;
+    }
+
+    .nav-pills>li.active>a,
+    .nav-pills>li.active>a:focus{
+      background-color: #881c1c;
+    }
+
+    .nav-pills>li.active>a:hover{
+      background-color: #881c1c;
     }
 
     .carousel-inner img {
@@ -119,12 +139,12 @@
 <nav class="navbar navbar-fixed-top navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="float: left; margin-left: 15px;">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><img src="/media/logo.jpg"/></a>
+      <a class="navbar-brand"><img src="/media/logo.jpg"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -153,16 +173,12 @@
       <div class="item active">
         <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
         <div class="carousel-caption">
-          <h3>Lawn</h3>
-          <p>Mowing, Fertilization, Pest Control</p>
         </div>      
       </div>
 
       <div class="item">
         <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
         <div class="carousel-caption">
-          <h3>Tree</h3>
-          <p>Trimming, Planting, Diagnostics</p>
         </div>      
       </div>
 
@@ -186,37 +202,115 @@
 </div>
   
 <div class="container text-center" id="about">    
-  <h3>Services</h3><br>
+  <br>
   <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-pills nav-stacked">
-          <li>Lawn</li>
-          <li>Tree</li>
-          <li>Field</li>
+    <div class="col-sm-4">
+      <ul class="nav nav-pills nav-stacked" style="font-size: 16pt;">
+        <li class="active"><a data-toggle="pill" href="#Lawn">Lawn</a></li>
+        <li><a data-toggle="pill" href="#Tree">Tree</a></li>
+        <li><a data-toggle="pill" href="#Field">Field</a></li>
       </ul>
+    </div>
+    <div class="col-sm-6 tab-content">
+      <div id="Lawn" class="tab-pane fade in active">
+        <h3>Lawn & Garden Services</h3>
+        <ul>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+        </ul>
+      </div>
+      <div id="Tree" class="tab-pane fade">
+        <h3>Tree Services</h3>
+        <ol>
+          <li>test</li>
+          <li>Test</li>
+        </ol>
+      </div>
+      <div id="Field" class="tab-pane fade">
+        <h3>Field Services</h3>
+        <table>
+          <tablebody>
+            <tr>
+              <th>
+                test
+              </th>
+              <th>
+                2
+              </th>
+            </tr>
+            <tr>
+              <td><button data-toggle="collapse" data-target="#demo">collapse</button></td>
+              <td>2</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+          </tablebody>
+        </table>
+      </div>
+    </div>
+    <div class="collapse col-sm-2" id="demo" style="background-color: green;">
+      <p>test</p>
     </div>
   </div>
   <hr>
-</div><br>
-
+  <div class="col-lg-12" style="padding-bottom: 50px;">
+    <div class="col-md-6" style="margin-top: 50px;">
+      <p style="text-align: justify; font-size: 12pt; margin: auto;">
+        K Agra provides agricultural and landscaping services to Plymouth and Bristol counties.
+        We are certified arborists with MCA and the ISA. We have capacity to support many jobs,
+        from simple mowing to engineering and instalation of small scale civil projects such as retaining
+        walls, drains, and wells. We are certified hoisting engineers, pesticide applicators, 
+        well drillers, and truckers. Our popular services are listed above; for anything else, it is
+        best to submit a request or call us. We'll respond as soon as possible.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <table style="margin: auto; font-size:16pt;">
+        <caption style="text-align: center;">Hours</caption>
+        <tr><td style="text-align: right;">Monday</td><td style="text-align: center; padding-left: 10px;">7:00 - 5:00</td></tr>
+        <tr><td style="text-align: right;">Tuesday</td><td style="text-align: center; padding-left: 10px;">7:00 - 5:00</td></tr>
+        <tr><td style="text-align: right;">Wednesday</td><td style="text-align: center; padding-left: 10px;">7:00 - 5:00</td></tr>
+        <tr><td style="text-align: right;">Thursday</td><td style="text-align: center; padding-left: 10px;">7:00 - 5:00</td></tr>
+        <tr><td style="text-align: right;">Friday</td><td style="text-align: center; padding-left: 10px;">7:00 - 5:00</td></tr>
+        <tr><td style="text-align: right;">Saturday</td><td style="text-align: center; padding-left: 10px;">7:00 - 12:00</td></tr>
+      </table>
+    </div>
+  </div><br>
+</div>
+<br>
 <footer id="contact" class="container-fluid text-center">
-  <div class="row" style="text-align: left;">
-    <div class="col-sm-1" style="text-align: right; padding-right: 0px;">
-      Owner:
-    </div>
-    <div class="col-sm-2" style="padding-left: 10px">
-      Jason Karos<br>
-      (978) 502 - 5476<br>
-      <a href="mailto:jkaros@kagra.farm">jkaros@kagra.farm</a>
-    </div>
-    <div class="col-sm-3">
-      <p>Test</p>
-    </div>
-    <div class="col-sm-3">
-      <p>Test</p>
-    </div>
-    <div class="col-sm-3">
-      <p>Test</p>
+  <div class="container text-center">
+    <div class="row" style="text-align: left;">
+      <div class="col-sm-3">
+        <table>
+          <td style="padding-right: 3px; vertical-align: top; text-align: right;">
+            Owner
+          </td>
+          <td style="padding-right:3px; padding-left: 3px; vertical-align: top; text-align: center;">:</td>
+          <td>
+            Jason Karos<br>
+            (978) 502 - 5476<br>
+            <a href="mailto:jkaros@kagra.farm">jkaros@kagra.farm</a>
+          </td>
+        </table>
+      </div>
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-3">
+      </div>
     </div>
   </div>
 </footer>
