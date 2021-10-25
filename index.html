@@ -125,6 +125,25 @@
       float: left;
     }
 
+    .service-list{
+      list-style-type: none;
+      text-align: left;
+      padding:0;
+    }
+
+    .service-list>li{
+      padding: 5px;
+    }
+
+    .service-list>li>a{
+      color: #525252;
+      border-bottom: dashed 1px #525252;
+      cursor: help;
+    }
+
+    .service-list>li>a:hover{
+      text-decoration: none;
+    }
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
     @media (max-width: 600px) {
@@ -200,9 +219,11 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-  
+ 
+<!-- service information row -->
 <div class="container text-center" id="about">    
   <br>
+  <!-- Lawn, Tree, Field buttons -->
   <div class="row">
     <div class="col-sm-4">
       <ul class="nav nav-pills nav-stacked" style="font-size: 16pt;">
@@ -211,56 +232,32 @@
         <li><a data-toggle="pill" href="#Field">Field</a></li>
       </ul>
     </div>
-    <div class="col-sm-6 tab-content">
+    <!-- service subsections -->
+    <div class="col-sm-6 tab-content" id="services">
       <div id="Lawn" class="tab-pane fade in active">
         <h3>Lawn & Garden Services</h3>
-        <ul>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-        </ul>
+        <div class="col-sm-12">
+          <ul class="service-list">
+            <li><a onclick="showInfo()">mowing</a></li>
+            <li><a data-toggle="collapse" data-target="#info2">fertilization</a></li>
+          </ul>
+        </div>
       </div>
       <div id="Tree" class="tab-pane fade">
         <h3>Tree Services</h3>
-        <ol>
-          <li>test</li>
-          <li>Test</li>
-        </ol>
+
       </div>
       <div id="Field" class="tab-pane fade">
         <h3>Field Services</h3>
-        <table>
-          <tablebody>
-            <tr>
-              <th>
-                test
-              </th>
-              <th>
-                2
-              </th>
-            </tr>
-            <tr>
-              <td><button data-toggle="collapse" data-target="#demo">collapse</button></td>
-              <td>2</td>
-              <td>1</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-            </tr>
-          </tablebody>
-        </table>
+        
       </div>
     </div>
-    <div class="collapse col-sm-2" id="demo" style="background-color: green;">
+    <!-- service info panel -->
+    <div class="collapse col-sm-2" id="service_info" style="background-color: #c0c0c0;">
       <p>test</p>
+    </div>
+    <div class="collapse col-sm-2" id="info2" style="background-color: #c0c0c0;">
+      <p>test2</p>
     </div>
   </div>
   <hr>
@@ -269,9 +266,9 @@
       <p style="text-align: justify; font-size: 12pt; margin: auto;">
         K Agra provides agricultural and landscaping services to Plymouth and Bristol counties.
         We are certified arborists with MCA and the ISA. We have capacity to support many jobs,
-        from simple mowing to engineering and instalation of small scale civil projects such as retaining
+        from simple mowing to installation of small scale civil projects such as retaining
         walls, drains, and wells. We are certified hoisting engineers, pesticide applicators, 
-        well drillers, and truckers. Our popular services are listed above; for anything else, it is
+        well drillers. Our popular services are listed above; for anything else, it is
         best to submit a request or call us. We'll respond as soon as possible.
       </p>
     </div>
@@ -316,5 +313,10 @@
 </footer>
 
 </body>
+<script>
+  function showInfo(){
+    $("#service_info").collapse("toggle")
+  }
+</script>
 </html>
 
