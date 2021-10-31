@@ -25,6 +25,11 @@
       padding-right: 5px;
     }
   
+    .collapsing .collapse .collapse.in{
+      display: flex;
+      align-items: stretch;
+    }
+
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -129,6 +134,7 @@
       list-style-type: none;
       text-align: left;
       padding:0;
+      margin: auto;
     }
 
     .service-list>li{
@@ -190,7 +196,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="/media/leaves.jpeg" alt="Image">
         <div class="carousel-caption">
         </div>      
       </div>
@@ -224,52 +230,57 @@
 <div class="container text-center" id="about">    
   <br>
   <!-- Lawn, Tree, Field buttons -->
-  <div class="row">
-    <div class="col-sm-4">
+  <div class="row" style="display: flex;">
+    <div class="col-sm-4" style="margin: auto;">
       <ul class="nav nav-pills nav-stacked" style="font-size: 16pt;">
-        <li class="active"><a data-toggle="pill" href="#Lawn">Lawn</a></li>
-        <li><a data-toggle="pill" href="#Tree">Tree</a></li>
-        <li><a data-toggle="pill" href="#Field">Field</a></li>
+        <li class="active"><a  onclick="closeInfo()" data-toggle="pill" href="#Lawn">Lawn</a></li>
+        <li><a onclick="closeInfo()" data-toggle="pill" href="#Tree">Tree</a></li>
+        <li><a onclick="closeInfo()" data-toggle="pill" href="#Field">Field</a></li>
       </ul>
     </div>
     <!-- service subsections -->
     <div class="col-sm-6 tab-content" id="services">
+      <!-- Lawn services -->
       <div id="Lawn" class="tab-pane fade in active">
         <h3>Lawn & Garden Services</h3>
-        <div class="col-sm-12">
+        <!-- Lawn and garden services divided across two ul for good formatting -->
+        <div class="col-sm-12" style="display: flex;">
           <ul class="service-list">
-            <li><a onclick="showInfo()">mowing</a></li>
-            <li><a data-toggle="collapse" data-target="#info2">fertilization</a></li>
+            <li><a onclick="showInfo(0)">mowing</a></li>
+            <li>fertilization</li>
+            <li>aeration</li>
+            <!-- <li><a onclick="showInfo(1)">pesticide application</a></li> -->
+          </ul>
+          <ul class="service-list">
+            <li>reseeding</li>
+            <li>raised bed construction</li>
+            <li>irrigation installation & repair</li>
           </ul>
         </div>
       </div>
+      <!-- Tree services -->
       <div id="Tree" class="tab-pane fade">
         <h3>Tree Services</h3>
 
       </div>
+      <!-- Field services -->
       <div id="Field" class="tab-pane fade">
         <h3>Field Services</h3>
         
       </div>
     </div>
     <!-- service info panel -->
-    <div class="collapse col-sm-2" id="service_info" style="background-color: #c0c0c0;">
+    <div class="col-sm-2 collapse" id="service_info" style="background-color: #c0c0c0;">
       <p>test</p>
-    </div>
-    <div class="collapse col-sm-2" id="info2" style="background-color: #c0c0c0;">
-      <p>test2</p>
     </div>
   </div>
   <hr>
   <div class="col-lg-12" style="padding-bottom: 50px;">
     <div class="col-md-6" style="margin-top: 50px;">
       <p style="text-align: justify; font-size: 12pt; margin: auto;">
-        K Agra provides agricultural and landscaping services to Plymouth and Bristol counties.
-        We are certified arborists with MCA and the ISA. We have capacity to support many jobs,
-        from simple mowing to installation of small scale civil projects such as retaining
-        walls, drains, and wells. We are certified hoisting engineers, pesticide applicators, 
-        well drillers. Our popular services are listed above; for anything else, it is
-        best to submit a request or call us. We'll respond as soon as possible.
+        K Agra provides agricultural, arborcultural and landscaping services to Plymouth 
+        and Bristol counties. Our popular services are found above. For anything else, please submit
+        an appointment using the "Request an appointment" button on the navbar.
       </p>
     </div>
     <div class="col-md-6">
@@ -314,8 +325,40 @@
 
 </body>
 <script>
-  function showInfo(){
-    $("#service_info").collapse("toggle")
+// toggle #service_info panel collapse
+  function showInfo(option){
+
+    var si_panel = document.getElementById("service_info")
+    console.log(eval(option))
+
+    // check if the #service_info panel is even open
+    if (si_panel.className == "col-sm-2 collapse") {
+      //if not, then open it
+      $("#service_info").collapse("show")
+    }
+    
+    //check which link is opening it
+    switch(eval(option)){
+      //if it's 0, then the panel should have information about mowing
+      case 0:
+        if (si_panel.innerHTML == "<p>mowing information</p>") {
+          $("#service_info").collapse("hide")
+        }
+        si_panel.innerHTML = "<p>mowing information</p>"
+        break;
+      case 1:
+        if (si_panel.innerHTML == "pesticide information") {
+            $("#service_info").collapse("hide")
+          }
+        si_panel.innerHTML = "pesticide information"
+        break;
+      case 2:
+        break;
+    }    
+  }
+
+  function closeInfo(){
+    $("#service_info").collapse("hide")
   }
 </script>
 </html>
