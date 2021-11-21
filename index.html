@@ -34,6 +34,10 @@
       align-items: stretch;
     }
 
+    .modal-trigger{
+      cursor: pointer;
+    }
+
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -199,26 +203,107 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+
+      <!-- first slide -->
       <div class="item active">
-        <img src="/media/leaves.jpeg" alt="Image">
+        <a data-toggle="modal" class="modal-trigger" data-target="#slide_one_modal"><img src="/media/leaves.jpeg" alt="Image Not Found"></a>
         <div class="carousel-caption">
+          <h2>Fall Cleanup</h2>
+        </div>      
+        
+      </div>
+
+      <!-- slide one modal -->
+      <div id="slide_one_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Fall Cleanup</h4>
+            </div>
+            <div class="modal-body">
+              <p>After the recent noreaster, people are still struggling to handle normal fall cleanup with
+                the added debris that has fallen. Call us today for cleanup from simple leaves to entire fallen tree removal
+                (which we can turn into firewood for you!)
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- second slide -->
+      <div class="item">
+        <a data-toggle="modal" class="modal-trigger" data-target="#slide_two_modal"><img src="/media/snow_plow.jpg" alt="Image Not Found"></a>
+        <div class="carousel-caption">
+          <h2>Snow Control</h2>
         </div>      
       </div>
 
+      <!-- slide two modal -->
+      <div id="slide_two_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Snow Control</h4>
+            </div>
+            <div class="modal-body">
+              <p>Winter is coming. The <a href="https://www.wcvb.com/article/noaa-2021-winter-outlook-warmer-average-precipitation-for-new-england/38027545">recent NOAA forcast</a> 
+                predicts increased average temperatures with near average precipitation for this coming winter. What this means for the south shore is ~40" of
+                snowfall with greater chance for melting and slush during the day. Don't let that slush become ice! K Agra offers residential and small 
+                commercial snow removal, along with options for pet safe deicers and emergency service. Please reach out for more details.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- third slide -->
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <a data-toggle="modal" class="modal-trigger" data-target="#slide_three_modal"><img src="./media/tree_trimming.jpg" alt="Image Not Found"></a>
         <div class="carousel-caption">
+          <h3>Tree Risk</h3>
         </div>      
       </div>
 
-      <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-        <div class="carousel-caption">
-          <h3>Field</h3>
-          <p>Wildflower Seeding, Pest Control</p>
-        </div>      
+      <!-- slide three modal -->
+      <div id="slide_three_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Tree Risk</h4>
+            </div>
+            <div class="modal-body">
+              <p>Recent storms may have you worried about risk to your home or automobile, or mabe a tree on your property
+                has been damaged or is leaning in a way it wasn't before. K Agra offers tree risk assessment, reinforcement,
+                and trimming services to help with virtually any tree issue.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
+
+  
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -247,30 +332,47 @@
       <!-- Lawn services -->
       <div id="Lawn" class="tab-pane fade in active">
         <h3>Lawn & Garden Services</h3>
-        <!-- Lawn and garden services divided across two ul for good formatting -->
+        <!-- Lawn and garden services divided multiple ul for good formatting -->
         <div class="col-sm-12" style="display: flex;">
           <ul class="service-list">
-            <li><a onclick="showInfo(0)">mowing</a></li>
-            <li>fertilization</li>
-            <li>aeration</li>
-            <!-- <li><a onclick="showInfo(1)">pesticide application</a></li> -->
+            <li><a onclick="showInfo(0)">Mowing</a></li>
+            <li>Fertilization</li>
+            <li>Core aeration</li>
           </ul>
           <ul class="service-list">
-            <li>reseeding</li>
-            <li>raised bed construction</li>
-            <li>irrigation installation & repair</li>
+            <li>Lawn reseeding</li>
+            <li>Raised bed construction</li>
+            <li>Irrigation installation & repair</li>
+          </ul>
+          <ul class="service-list">
+            <li><a onclick="showInfo(1)">Pest control</a></li>
           </ul>
         </div>
       </div>
       <!-- Tree services -->
       <div id="Tree" class="tab-pane fade">
         <h3>Tree Services</h3>
-
+        <div class="col-sm-12" style="display: flex;">
+          <ul class="service-list">
+            <li><a onclick="showInfo(0)">Trimming</a></li>
+            <li>Removal</li>
+            <li>Health assessment</li>
+          </ul>
+          <ul class="service-list">
+            <li><a onclick="showInfo(0)">Planting</a></li>
+            <li>Pest control</li>
+            <li>Tree stabilization</li>
+          </ul>
+        </div>
       </div>
       <!-- Field services -->
       <div id="Field" class="tab-pane fade">
         <h3>Field Services</h3>
-        
+        <ul class="service-list">
+          <li><a onclick="showInfo(0)">Planting</a></li>
+          <li>Pest control</li>
+          <li>Tree stabilization</li>
+        </ul>
       </div>
     </div>
     <!-- service info panel -->
@@ -332,11 +434,11 @@
 // toggle #service_info panel collapse
   function showInfo(option){
 
-    var si_panel = document.getElementById("service_info")
+    var service_info_panel = document.getElementById("service_info")
     console.log(eval(option))
 
     // check if the #service_info panel is even open
-    if (si_panel.className == "col-sm-2 collapse") {
+    if (service_info_panel.className == "col-sm-2 collapse") {
       //if not, then open it
       $("#service_info").collapse("show")
     }
@@ -345,16 +447,16 @@
     switch(eval(option)){
       //if it's 0, then the panel should have information about mowing
       case 0:
-        if (si_panel.innerHTML == "<p>mowing information</p>") {
+        if (service_info_panel.innerHTML == "<p>mowing information</p>") {
           $("#service_info").collapse("hide")
         }
-        si_panel.innerHTML = "<p>mowing information</p>"
+        service_info_panel.innerHTML = "<p>mowing information</p>"
         break;
       case 1:
-        if (si_panel.innerHTML == "pesticide information") {
+        if (service_info_panel.innerHTML == "pesticide information") {
             $("#service_info").collapse("hide")
           }
-        si_panel.innerHTML = "pesticide information"
+        service_info_panel.innerHTML = "pesticide information"
         break;
       case 2:
         break;
