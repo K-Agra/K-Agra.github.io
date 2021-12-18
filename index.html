@@ -5,17 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
+
     body{
       font-family: "Times New Roman", Times, serif;
+      font-size: 13pt;
+    }
+
+    @media only screen and (max-width: 600px){
+      body {font-size: 15pt;}
+      .carousel-caption {display: none;}
     }
     
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
+    }
+
+    h3{
+      font-family: "Times New Roman", Times, serif;
     }
 
     img{
@@ -28,6 +40,40 @@
       font-size: 1em;
       padding-left: 5px;
       padding-right: 5px;
+    }
+
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+    }
+
+    .carousel-indicators {
+      width: auto;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+    }
+
+    .carousel-indicators ol {
+      width: 100%;
+    }
+
+    .carousel-indicators .active {
+      background: #881c1c;
+      width: 34%;
+    }
+
+    .carousel-indicators li {
+      height: 10px!important;
+      border-radius: 0px !important;
+      border-style: none;
+      width: 33%;
+      margin: 0px;
+      padding: 0px;
+      float: left;
     }
   
     .collapsing .collapse .collapse.in{
@@ -105,40 +151,6 @@
       background-color: #881c1c;
     }
 
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-    }
-
-    .carousel-indicators {
-      width: auto;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0;
-    }
-
-    .carousel-indicators ol {
-      width: 100%;
-    }
-
-    .carousel-indicators .active {
-      background: #881c1c;
-      width: 34%;
-    }
-
-    .carousel-indicators li {
-      height: 10px!important;
-      border-radius: 0px !important;
-      border-style: none;
-      width: 33%;
-      margin: 0px;
-      padding: 0px;
-      float: left;
-    }
-
     .service-list{
       list-style-type: none;
       text-align: left;
@@ -194,9 +206,7 @@
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
     @media (max-width: 600px) {
-      .carousel-caption {
-        display: none; 
-    }
+      
   }
   </style>
 </head>
@@ -364,7 +374,7 @@
   <br>
   <!-- Lawn, Tree, Field buttons -->
   <div class="row" style="display: flex;">
-    <div class="col-sm-4" style="margin: auto;">
+    <div class="col-lg-4" style="margin: auto;">
       <ul class="nav nav-pills nav-stacked" style="font-size: 16pt;">
         <li class="active"><a  onclick="closeInfo()" data-toggle="pill" href="#Lawn">Lawn</a></li>
         <li><a onclick="closeInfo()" data-toggle="pill" href="#Tree">Tree</a></li>
@@ -372,7 +382,7 @@
       </ul>
     </div>
     <!-- service subsections -->
-    <div class="col-sm-6 tab-content" id="services">
+    <div class="col-lg-6 tab-content" id="services" style="margin: auto;">
       <!-- Lawn services -->
       <div id="Lawn" class="tab-pane fade in active">
         <h3>Lawn & Garden Services</h3>
@@ -422,7 +432,7 @@
       </div>
     </div>
     <!-- service info panel -->
-    <div class="col-sm-2 collapse" id="service_info" style="background-color: #c0c0c0;">
+    <div class="col-lg-2 collapse" id="service_info" style="margin: auto; background-color: #c0c0c0;">
       <p>test</p>
     </div>
   </div>
