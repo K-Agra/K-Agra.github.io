@@ -11,6 +11,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
 
+    @media(min-width: 768px){
+      .navbar-brand > img{
+        max-height: 27px;
+      }
+    }
+
     body{
       font-family: "Times New Roman", Times, serif;
       font-size: 14pt;
@@ -41,6 +47,12 @@
       font-size: 1em;
       padding-left: 5px;
       padding-right: 5px;
+    }
+
+    @media(min-width: 768px){
+      .navbar-btn{
+        padding: 15vw
+      }
     }
 
     .carousel-inner img {
@@ -94,10 +106,6 @@
       border-color: #000000;
     }
 
-    .navbar-nav{
-      margin: 4px;
-    }
-
     .navbar-default .btn-default:hover {
       background-color: #8A8B8C;
       color: white;
@@ -136,6 +144,12 @@
 
     .navbar-default .navbar-nav > li > a:hover:after {
       width: 100%;
+    }
+
+    @media(min-width: 768px){
+      .navbar-nav{
+        margin: 4px;
+      }
     }
 
     .nav-pills>li>a{
